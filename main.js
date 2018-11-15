@@ -31,14 +31,19 @@ function calcDate (start, end) {
 
 // Define event listeners
 startDate.addEventListener('input', () => {
-   let days = calcDate(document.querySelector('#start-date').value, document.querySelector('#renewal-date').value);
+  let days = calcDate(startDate.value, endDate.value);
+  daysLeft.innerHTML = days;
 
-   daysLeft.innerHTML = days;
+  perDayCost.innerHTML = (parseInt(daysLeft.innerHTML, 10) * perYearCost.value);
 });
 
 endDate.addEventListener('input', () => {
-  let days = calcDate(document.querySelector('#start-date').value, document.querySelector('#renewal-date').value);
-
+  let days = calcDate(startDate.value, endDate.value);
   daysLeft.innerHTML = days;
+  
+  perDayCost.innerHTML = (parseInt(daysLeft.innerHTML, 10) * perYearCost.value);
 });
 
+perYearCost.addEventListener('input', () => {
+  perDayCost.innerHTML = (parseInt(daysLeft.innerHTML, 10) * perYearCost.value);
+});
