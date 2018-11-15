@@ -29,21 +29,25 @@ function calcDate (start, end) {
   return dateDiff;
 };
 
+function setPerDayCost (daysLeft, perYearCost) {
+  perDayCost.innerHTML = perYearCost / daysLeft;
+};
+
 // Define event listeners
 startDate.addEventListener('input', () => {
   let days = calcDate(startDate.value, endDate.value);
   daysLeft.innerHTML = days;
 
-  perDayCost.innerHTML = (parseInt(daysLeft.innerHTML, 10) * perYearCost.value);
+  setPerDayCost(parseInt(daysLeft.innerHTML, 10), perYearCost.value);
 });
 
 endDate.addEventListener('input', () => {
   let days = calcDate(startDate.value, endDate.value);
   daysLeft.innerHTML = days;
-  
-  perDayCost.innerHTML = (parseInt(daysLeft.innerHTML, 10) * perYearCost.value);
+
+  setPerDayCost(parseInt(daysLeft.innerHTML, 10), perYearCost.value);
 });
 
 perYearCost.addEventListener('input', () => {
-  perDayCost.innerHTML = (parseInt(daysLeft.innerHTML, 10) * perYearCost.value);
+  setPerDayCost(parseInt(daysLeft.innerHTML, 10), perYearCost.value);
 });
