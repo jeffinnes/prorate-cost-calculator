@@ -13,12 +13,51 @@
   
   <div class="main">
     <span>It's Calculatin' Time!</span>
-    
-    <span>Start Date - Renewal Date = Days Left</span>
-    <span>Yearly Cost of Single License / 365 = Cost of Single License per Day</span>
-    <span>Days Left * Cost of license per Day = Prorate for single license</span>
-    <span>Single License Prorate * Number Ordered = Subtotal</span>
-    <span>Subtotal * Current tax rate = Total</span> 
+
+    <div>
+      <label for="start-date">Start Date:</label>
+      <input type="date" id="start-date">
+    </div>
+
+    <div>
+      <label for="renewal-date">Renewal Date:</label>
+      <input type="date" id="renewal-date">
+    </div>
+
+    <div>
+      <span>Days till renewal: <span id="days-left"></span></span>
+    </div>
+
+    <div>
+      <label for="single-cost-per-year">Cost of Single License per Year:</label>
+      <input type="text" id="single-cost-per-year">
+    </div>
+
+    <div>
+      <span>Cost of Single License per Day: <span id="single-cost-per-day"></span></span>
+    </div>
+
+    <div>
+      <span>Prorated Cost for Single Lisense: <span id="prorate-single"></span></span>
+    </div>
+
+    <div>
+      <label for="qty-ordered">Number of Additional seats:</label>
+      <input type="number" step="0.01" min="0" id="qty-ordered">
+    </div>
+
+    <div>
+      <span>Subtotal: <span id="subtotal"></span></span>
+    </div>
+
+    <div>
+      <label for="tax">Current Tax Rate:</label>
+      <input type="number" step="0.0001" min="0" id="tax">
+    </div>
+
+    <div>
+      <span>Prorate Total: <span id="total"></span></span>
+    </div>
 
   </div>
 
