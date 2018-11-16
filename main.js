@@ -21,7 +21,7 @@ let curDay = currentDate.getDate();
 // Set Start date to current date
 startDate.setAttribute('value', `${curYear}-${curMonth}-${curDay}`);
 
-// Misc. Function Declarations
+// Various Function Declarations
 function calcDate (start, end) {
   const sDate = new Date(start);
   const eDate = new Date(end);
@@ -29,25 +29,32 @@ function calcDate (start, end) {
   return dateDiff;
 };
 
-function setPerDayCost (daysLeft, perYearCost) {
-  perDayCost.innerHTML = perYearCost / daysLeft;
+function setDaysLeft () {
+  let days = calcDate(startDate.value, endDate.value);
+  daysLeft.innerHTML = days;
 };
+
+function setPerDayCost (perYearCost) {
+  perDayCost.innerHTML = perYearCost / 365;
+};
+
+function setProratedSingle (perDay, days) {
+  proratedSingle.innerHTML = perDay * days;
+};
+
 
 // Define event listeners
 startDate.addEventListener('input', () => {
-  let days = calcDate(startDate.value, endDate.value);
-  daysLeft.innerHTML = days;
-
-  setPerDayCost(parseInt(daysLeft.innerHTML, 10), perYearCost.value);
+  setDaysLeft();
+  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseInt(perDayCost.innerHTML, 10));
 });
 
 endDate.addEventListener('input', () => {
-  let days = calcDate(startDate.value, endDate.value);
-  daysLeft.innerHTML = days;
-
-  setPerDayCost(parseInt(daysLeft.innerHTML, 10), perYearCost.value);
+  setDaysLeft();
+  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseInt(perDayCost.innerHTML, 10));
 });
 
 perYearCost.addEventListener('input', () => {
-  setPerDayCost(parseInt(daysLeft.innerHTML, 10), perYearCost.value);
+  setPerDayCost(perYearCost.value);
+  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseInt(perDayCost.innerHTML, 10));
 });
