@@ -42,19 +42,30 @@ function setProratedSingle (days, perDay) {
   prorateSingle.innerHTML = (perDay * days).toFixed(2);
 };
 
+function setSubtotal (qtyAdd, singleRate) {
+  subtotal.innerHTML = (qtyAdd * singleRate).toFixed(2);
+};
+
 
 // Define event listeners
 startDate.addEventListener('input', () => {
   setDaysLeft();
   setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseFloat(perDayCost.innerHTML).toFixed(2));
+  setSubtotal(qty.value, parseFloat(prorateSingle.innerHTML).toFixed(2));
 });
 
 endDate.addEventListener('input', () => {
   setDaysLeft();
   setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseFloat(perDayCost.innerHTML).toFixed(2));
+  setSubtotal(qty.value, parseFloat(prorateSingle.innerHTML).toFixed(2));
 });
 
 perYearCost.addEventListener('input', () => {
   setPerDayCost(perYearCost.value);
   setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseFloat(perDayCost.innerHTML).toFixed(2));
+  setSubtotal(qty.value, parseFloat(prorateSingle.innerHTML).toFixed(2));
+});
+
+qty.addEventListener('input', () => {
+  setSubtotal(qty.value, parseFloat(prorateSingle.innerHTML).toFixed(2));
 });
