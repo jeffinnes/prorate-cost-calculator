@@ -6,7 +6,7 @@ const endDate = document.querySelector('#renewal-date');
 const daysLeft = document.querySelector('#days-left');
 const perYearCost = document.querySelector("#single-cost-per-year");
 const perDayCost = document.querySelector('#single-cost-per-day');
-const proratedSingle = document.querySelector('#prorated-single');
+const prorateSingle = document.querySelector('#prorate-single');
 const qty = document.querySelector('#qty');
 const subtotal = document.querySelector('#subtotal');
 const tax = document.querySelector('#tax');
@@ -35,26 +35,26 @@ function setDaysLeft () {
 };
 
 function setPerDayCost (perYearCost) {
-  perDayCost.innerHTML = perYearCost / 365;
+  perDayCost.innerHTML = (perYearCost / 365).toFixed(2);
 };
 
-function setProratedSingle (perDay, days) {
-  proratedSingle.innerHTML = perDay * days;
+function setProratedSingle (days, perDay) {
+  prorateSingle.innerHTML = (perDay * days).toFixed(2);
 };
 
 
 // Define event listeners
 startDate.addEventListener('input', () => {
   setDaysLeft();
-  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseInt(perDayCost.innerHTML, 10));
+  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseFloat(perDayCost.innerHTML).toFixed(2));
 });
 
 endDate.addEventListener('input', () => {
   setDaysLeft();
-  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseInt(perDayCost.innerHTML, 10));
+  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseFloat(perDayCost.innerHTML).toFixed(2));
 });
 
 perYearCost.addEventListener('input', () => {
   setPerDayCost(perYearCost.value);
-  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseInt(perDayCost.innerHTML, 10));
+  setProratedSingle(parseInt(daysLeft.innerHTML, 10), parseFloat(perDayCost.innerHTML).toFixed(2));
 });
