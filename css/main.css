@@ -2,3 +2,12 @@ html {
   background-color: rgba(44, 62, 80,1.0);
   color: rgba(189, 195, 199,1.0);
 }
+
+.main {
+  width: 75%;
+}
+
+.flex-box {
+  display: flex;
+}
+
