@@ -10,14 +10,16 @@
 </head>
 
 <body>
-  <header class="flex-box">
+
+  <div class="title-box">
+    <i class="far fa-calculator fa-3x"></i>
     <h1>Prorated Cost Calculator</h1>
     <span class="cute-bs"><i class="far fa-code"></i> with <i class="fas fa-heart"></i> by Jeff</span>
-  </header>
+  </div>
 
   <div class="main">
 
-    <div class="dates flex-box row">
+    <div class="date-pickers flex-box">
       <div>
         <label for="start-date">Start Date:</label>
         <input type="date" id="start-date">
@@ -40,7 +42,7 @@
     </div>
 
     <div class="row">
-      <span>Prorated Cost for Single License: <span id="prorate-single">0</span></span>
+      <span>Prorated Cost for Single License: $<span id="prorate-single">0</span></span>
     </div>
 
     <div class="row">
@@ -49,8 +51,8 @@
     </div>
 
     <div class="row">
-      <span>Subtotal: <span id="subtotal">0</span></span>
-      
+      <span>Subtotal: $<span id="subtotal">0</span></span>
+
     </div>
 
     <div class="row">
@@ -59,7 +61,7 @@
     </div>
 
     <div class="row">
-      <span>Prorate Total: <span id="total"></span></span>
+      <span>Prorate Total: $<span id="total">0</span></span>
     </div>
 
   </div>

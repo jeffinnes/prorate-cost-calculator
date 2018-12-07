@@ -3,14 +3,13 @@ html {
   color: rgba(189, 195, 199,1.0);
 }
 
-header {
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  /*padding: 0 .5rem;*/
+div.title-box {
+  margin: auto;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
 }
 
-header span.cute-bs {
+div.title-box span.cute-bs {
   font-size: 1.15rem;
 }
 
@@ -18,17 +17,26 @@ header span.cute-bs {
   width: 65%;
   margin: auto;
   padding-bottom: 2rem;
+  background-color: rgb(57, 80, 104);
+  box-shadow: 10px 5px 5px rgb(25, 35, 46);
 }
 
 .flex-box {
   display: flex;
 }
 
-.row {
+.row,
+.date-pickers {
   padding-top: 1.5rem;
 }
 
-.dates {
+.row {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.date-pickers {
   justify-content: space-around;
 }
 
