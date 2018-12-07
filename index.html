@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <title>Prorated Cost Calculator</title>
@@ -7,65 +8,63 @@
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <script src='node_modules/@fortawesome/fontawesome-pro/js/all.js'></script>
 </head>
+
 <body>
-  <header>
-    <span>Prorated Cost Calculator</span>
+  <header class="flex-box">
+    <h1>Prorated Cost Calculator</h1>
+    <span class="cute-bs"><i class="far fa-code"></i> with <i class="fas fa-heart"></i> by Jeff</span>
   </header>
-  
+
   <div class="main">
-    <h1>It's Calculatin' Time!</h1>
 
-    <div>
-      <label for="start-date">Start Date:</label>
-      <input type="date" id="start-date">
+    <div class="dates flex-box row">
+      <div>
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date">
+      </div>
+
+      <div>
+        <label for="renewal-date">Renewal Date:</label>
+        <input type="date" id="renewal-date">
+      </div>
     </div>
 
-    <div>
-      <label for="renewal-date">Renewal Date:</label>
-      <input type="date" id="renewal-date">
-    </div>
-
-    <div>
+    <div class="flex-box row">
       <span>Days until renewal: <span id="days-left"></span></span>
     </div>
 
-    <div>
+    <div class="row">
       <label for="single-cost-per-year">Cost of Single License per Year:</label>
-      <input type="number" step="0.01" id="single-cost-per-year">
+      <input type="number" step="0.01" id="single-cost-per-year" class="num-input">
+      <span> = $<span id="single-cost-per-day">0</span> per Day.</span>
     </div>
 
-    <div>
-      <span>Cost of Single License per Day: <span id="single-cost-per-day">0</span></span>
-    </div>
-
-    <div>
+    <div class="row">
       <span>Prorated Cost for Single License: <span id="prorate-single">0</span></span>
     </div>
 
-    <div>
+    <div class="row">
       <label for="qty">Number of Additional seats:</label>
-      <input type="number" step="1" min="0" id="qty">
+      <input type="number" step="1" min="0" id="qty" class="num-input">
     </div>
 
-    <div>
+    <div class="row">
       <span>Subtotal: <span id="subtotal">0</span></span>
+      
     </div>
 
-    <div>
+    <div class="row">
       <label for="tax">Current Tax Rate:</label>
-      <input type="number" step="0.0001" min="0" id="tax">
+      <input type="number" step="0.0001" min="0" id="tax" class="num-input">
     </div>
 
-    <div>
+    <div class="row">
       <span>Prorate Total: <span id="total"></span></span>
     </div>
 
   </div>
 
-  <footer>
-    <span><i class="far fa-code"></i> with <i class="fas fa-heart"></i> by Jeff</span>
-  </footer>
-
   <script src="js/main.js"></script>
 </body>
+
 </html>

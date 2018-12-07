@@ -3,11 +3,36 @@ html {
   color: rgba(189, 195, 199,1.0);
 }
 
+header {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /*padding: 0 .5rem;*/
+}
+
+header span.cute-bs {
+  font-size: 1.15rem;
+}
+
 .main {
-  width: 75%;
+  width: 65%;
+  margin: auto;
+  padding-bottom: 2rem;
 }
 
 .flex-box {
   display: flex;
+}
+
+.row {
+  padding-top: 1.5rem;
+}
+
+.dates {
+  justify-content: space-around;
+}
+
+.num-input {
+  width: 6rem;
 }
 
