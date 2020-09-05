@@ -3,6 +3,10 @@ html {
   color: rgba(189, 195, 199,1.0);
 }
 
+.flex-box {
+  display: flex;
+}
+
 div.title-box {
   margin: auto;
   text-align: center;
@@ -13,31 +17,52 @@ div.title-box span.cute-bs {
   font-size: 1.15rem;
 }
 
-.main {
+div.calculator {
   width: 65%;
   margin: auto;
+  padding-top: 1rem;
   padding-bottom: 2rem;
   background-color: rgb(57, 80, 104);
   box-shadow: 10px 5px 5px rgb(25, 35, 46);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(45px, auto);
+  align-items: center;
 }
 
-.flex-box {
-  display: flex;
+div.date-pickers {
+  grid-column: 2 / 12;
+  justify-content: space-between;
 }
 
-.row,
-.date-pickers {
-  padding-top: 1.5rem;
+div.days-left {
+ grid-column: 2 / 6;
 }
 
-.row {
-  width: 80%;
-  margin: 0 auto;
+div.single-cost-per-year {
+  grid-column: 2 / 9;
 }
 
+div.prorate-single {
+  grid-column: 2 / 6;
+}
 
-.date-pickers {
-  justify-content: space-around;
+div.qty {
+  grid-column: 2 / 8;
+}
+
+div.subtotal {
+  grid-column: 2 / 6;
+}
+
+div.tax {
+  grid-column: 2 / 7;
+}
+
+div.total {
+  grid-column: 4 / 10;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .num-input {
