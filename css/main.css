@@ -1,6 +1,6 @@
 html {
-  background-color: rgba(44, 62, 80,1.0);
-  color: rgba(189, 195, 199,1.0);
+  background-color: rgba(44, 62, 80);
+  color: rgb(213, 224, 231);
 }
 
 .flex-box {
@@ -8,7 +8,6 @@ html {
 }
 
 div.title-box {
-  margin: auto;
   text-align: center;
   margin: 2rem 0 1rem 0;
 }
@@ -69,3 +68,7 @@ div.total {
   width: 6rem;
 }
 
+div.footer-box {
+  text-align: center;
+  margin: 1rem 0 1rem 0;
+}
