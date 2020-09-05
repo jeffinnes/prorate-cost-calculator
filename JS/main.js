@@ -18,6 +18,14 @@ let curYear = currentDate.getFullYear();
 let curMonth = currentDate.getMonth() + 1;
 let curDay = currentDate.getDate();
 
+if (curMonth < 10) {
+  curMonth = `0${curMonth}`;
+}
+
+if (curDay < 10) {
+  curDay = `0${curDay}`;
+}
+
 // Set Start date to current date
 startDate.setAttribute('value', `${curYear}-${curMonth}-${curDay}`);
 
